@@ -116,8 +116,8 @@ data:
         - allow: [Component, System, API, Resource, Location, Template]
       locations:
         # Examples from a public GitHub repository.
-        - type: url
-          target: https://github.com/awslabs/backstage-templates-on-eks/blob/main/catalog-info.yaml
+        #- type: url
+        #  target: https://github.com/awslabs/backstage-templates-on-eks/blob/main/catalog-info.yaml
         # Examples from a cnoe GitHub repository.
         - type: url
           target: https://github.com/cnoe-io/backstage-terraform-integrations/blob/main/backstage-templates-for-eks/catalog-info.yaml
