@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: custom-tesis-templates
+  description: custom templates
+spec:
+  targets:
+    - ./templates/ec2-template.yaml
