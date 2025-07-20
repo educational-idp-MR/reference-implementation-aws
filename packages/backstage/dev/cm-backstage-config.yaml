@@ -124,11 +124,6 @@ data:
         # Registrar nuestro componente de EC2
         - type: url
           target: https://github.com/educational-idp-MR/reference-implementation-aws/blob/main/packages/backstage/dev/catalog-info.yaml
-        # Registrar nuestro template de EC2
-        - type: file
-          target: /opt/app-root/src/packages/backstage/templates/ec2-template.yaml
-          rules:
-            - allow: [Template]
         ## Uncomment these lines to add an example org
         # - type: url
         #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
