@@ -123,9 +123,7 @@ data:
           target: https://github.com/cnoe-io/backstage-terraform-integrations/blob/main/backstage-templates-for-eks/catalog-info.yaml
         # Registrar nuestro componente de EC2
         - type: file
-          target: /opt/app-root/src/packages/backstage/ec2-component.yaml
-          rules:
-            - allow: [Component, API]
+          target: ./catalog-info.yaml
         # Registrar nuestro template de EC2
         - type: file
           target: /opt/app-root/src/packages/backstage/templates/ec2-template.yaml
