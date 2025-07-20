@@ -116,8 +116,8 @@ data:
         - allow: [Component, System, API, Resource, Location, Template]
       locations:
         # Examples from a public GitHub repository.
-    #    - type: url
-    #      target: https://github.com/awslabs/backstage-templates-on-eks/blob/main/catalog-info.yaml
+        - type: url
+          target: https://github.com/awslabs/backstage-templates-on-eks/blob/main/catalog-info.yaml
         - type: url
           target: https://github.com/educational-idp-MR/reference-implementation-aws/blob/main/packages/backstage/dev/catalog-info.yaml
         ## Uncomment these lines to add an example org
