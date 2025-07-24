@@ -97,16 +97,6 @@ data:
 
     scaffolder:
       # see https://backstage.io/docs/features/software-templates/configuration for software template options
-      defaultAuthor:
-        name: CNOE Team
-        email: cnoe@example.com
-      defaultCommitMessage: 'Creando recursos AWS a través de CNOE'
-      # Registro de los templates personalizados
-      registry:
-        - type: file
-          target: /opt/app-root/src/packages/backend/templates/ec2-template.yaml
-          rules:
-            - allow: [Template]
 
     catalog:
       import:
