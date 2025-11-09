@@ -8,7 +8,7 @@ repo:
   basepath: "packages" # Directory in which configuration of addons is stored
 
 # The name of the EKS cluster you are installing the reference implementation on.
-cluster_name: "cnoe-ref-impl"
+cluster_name: "cnoe-ref-impl-2"
 # Set this to "true" if EKS cluster is Auto Mode othewise "false"
 # !!! Note: This is a string value as it is passed on to the Argo CD cluster secret as label
 auto_mode: "false"
