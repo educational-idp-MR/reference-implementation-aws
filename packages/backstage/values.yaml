@@ -121,6 +121,11 @@ backstage:
       baseUrl: ${ARGO_WORKFLOWS_URL}
 postgresql:
   enabled: true
+  # Use Bitnami Legacy repository (temporary solution)
+  # See: https://github.com/bitnami/containers/issues/83267
+  image:
+    registry: docker.io
+    repository: bitnamilegacy/postgresql
   auth:
     username: "backstage"
     existingSecret: "backstage-env-vars"
