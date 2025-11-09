@@ -14,11 +14,11 @@ vpc:
     gateway: Single
 managedNodeGroups:
   - name: managed-ng-1
-    instanceType: m5.large
-    minSize: 3
+    instanceType: t3.medium
+    minSize: 1
     maxSize: 6
-    desiredCapacity: 4
-    volumeSize: 100
+    desiredCapacity: 2
+    volumeSize: 30
     ssh:
       allow: false
     labels:
@@ -28,11 +28,7 @@ addonsConfig:
 addons:
   - name: eks-pod-identity-agent
   - name: aws-ebs-csi-driver
-    podIdentityAssociations:
-      - namespace: kube-system
-        serviceAccountName: ebs-csi-controller-sa
-        wellKnownPolicies:
-          ebsCSIController: true
+    useDefaultPodIdentityAssociations: true
 iam:
   withOIDC: true
   podIdentityAssociations:
@@ -58,7 +54,7 @@ iam:
               - "secretsmanager:DescribeSecret"
               - "secretsmanager:ListSecretVersionIds"
             Resource:
-              - "arn:aws:secretsmanager:us-west-2:${AWS_ACCOUNT_ID}:secret:cnoe-ref-impl/*"
+              - "arn:aws:secretsmanager:us-east-1:${AWS_ACCOUNT_ID}:secret:cnoe-ref-impl/*"
     - namespace: kube-system
       serviceAccountName: aws-load-balancer-controller
       wellKnownPolicies:
