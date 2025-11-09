@@ -67,11 +67,11 @@ module "eks" {
   # Auto Mode handles compute resources automatically
   eks_managed_node_groups = var.auto_mode ? {} : {
     initial = {
-      instance_types = ["m5.large"]
+      instance_types = ["t3.medium"]
       
-      min_size     = 3
+      min_size     = 1
       max_size     = 6
-      desired_size = 4
+      desired_size = 3
 
       disk_size = 100
       
