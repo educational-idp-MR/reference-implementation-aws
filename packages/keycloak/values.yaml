@@ -3,6 +3,13 @@ production: true
 usePasswordFiles: false
 proxyHeaders: "forwarded"
 
+# Use Bitnami Legacy repository due to catalog migration
+# See: https://github.com/bitnami/containers/issues/83267
+image:
+  registry: docker.io
+  repository: bitnamilegacy/keycloak
+  tag: ""  # Uses the chart's default version
+
 global:
   defaultStorageClass: gp3
 
@@ -23,6 +30,12 @@ ingress:
 
 postgresql:
   enabled: true
+  # Use Bitnami Legacy repository due to catalog migration
+  # See: https://github.com/bitnami/containers/issues/83267
+  image:
+    registry: docker.io
+    repository: bitnamilegacy/postgresql
+    tag: ""  # Uses the chart's default version
   auth:
     username: keycloak
     database: keycloak
