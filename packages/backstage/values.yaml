@@ -9,6 +9,8 @@ ingress:
     secretName: "backstage-server-tls"
 backstage:
   replicas: 1
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
   image:
     registry: ghcr.io
     repository: cnoe-io/backstage-app
