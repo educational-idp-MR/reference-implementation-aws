@@ -93,7 +93,7 @@ backstage:
         github:
           development:
             clientId: Iv23li5v5YpqUljEZCT0
-            clientSecret: ${BACKSTAGE_CLIENT_SECRET}
+            clientSecret: 5d5e194bc599fef03eb5b5676494dc42d891a136
             ## uncomment if using GitHub Enterprise
             # enterpriseInstanceUrl: ${AUTH_GITHUB_ENTERPRISE_INSTANCE_URL}
             signIn:
