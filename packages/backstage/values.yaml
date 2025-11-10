@@ -102,6 +102,9 @@ backstage:
         pullRequestBranchName: backstage-integration
       rules:
         - allow: [Component, System, API, Resource, Location, Template]
+      locations:
+        - type: url
+          target: https://github.com/educational-idp-MR/idp-stacks/blob/main/aws-templates/entities/catalog-info.yaml
     kubernetes:
       serviceLocatorMethod:
         type: multiTenant
