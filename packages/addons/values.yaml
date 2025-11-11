@@ -179,6 +179,8 @@ backstage:
         value: 'https://{{ if eq .metadata.labels.path_routing "false" }}argo-workflows.{{ .metadata.annotations.domain }}{{ else }}{{ .metadata.annotations.domain }}/argo-workflows{{ end }}'
       - name: ARGO_CD_URL
         value: 'https://{{ if eq .metadata.labels.path_routing "false" }}argocd.{{ .metadata.annotations.domain }}{{ else }}{{ .metadata.annotations.domain }}/argocd{{ end }}'
+      - name: BACKSTAGE_DOMAIN
+        value: '{{ .metadata.annotations.domain }}'
   additionalResources:
   - manifestPath: "manifests"
     type: "manifests"
