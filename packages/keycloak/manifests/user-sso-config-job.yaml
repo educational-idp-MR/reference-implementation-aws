@@ -77,6 +77,15 @@ data:
     {"name":"admin"}
   group-base-user-payload.json: |
     {"name":"base-user"}
+  realm-config-payload.json: |
+    {
+      "registrationAllowed": true,
+      "registrationEmailAsUsername": false,
+      "verifyEmail": false,
+      "loginWithEmailAllowed": true,
+      "duplicateEmailsAllowed": false,
+      "resetPasswordAllowed": true
+    }
   group-mapper-payload.json: |
     {
         "protocol": "openid-connect",
@@ -319,6 +328,20 @@ spec:
                 echo "Error validating Keycloak token: HTTP status $HTTP_STATUS"
                 cat /tmp/response.txt
                 exit 1
+              fi
+
+              # Enable user registration in the realm
+              echo "Enabling user registration in realm cnoe"
+              HTTP_STATUS=$(curl -sS -w "%{http_code}" -o /tmp/response.txt -H "Content-Type: application/json" \
+                -H "Authorization: bearer ${KEYCLOAK_TOKEN}" \
+                -X PUT --data @/var/config/realm-config-payload.json \
+                "${KEYCLOAK_URL}/admin/realms/cnoe")
+              
+              if [ "$HTTP_STATUS" -ne 204 ] && [ "$HTTP_STATUS" -ne 200 ]; then
+                echo "Error enabling user registration: HTTP status $HTTP_STATUS"
+                cat /tmp/response.txt
+              else
+                echo "User registration enabled successfully"
               fi
 
               # Download kubectl

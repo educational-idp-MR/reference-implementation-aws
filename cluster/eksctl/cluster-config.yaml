@@ -16,8 +16,8 @@ managedNodeGroups:
   - name: managed-ng-1
     instanceType: t3.medium
     minSize: 1
-    maxSize: 6
-    desiredCapacity: 3
+    maxSize: 10
+    desiredCapacity: 5
     volumeSize: 30
     ssh:
       allow: false
