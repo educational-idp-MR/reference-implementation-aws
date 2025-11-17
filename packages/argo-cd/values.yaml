@@ -10,6 +10,10 @@ server:
     tls: true
     annotations:
       argocd.argoproj.io/sync-wave: "20"
+controller:
+  env:
+    - name: ARGOCD_RECONCILIATION_TIMEOUT
+      value: "1m"
 configs:
   cm:
     accounts.backstage: apiKey
