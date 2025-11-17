@@ -15,6 +15,7 @@ syncPolicy:
   syncOptions:
     - CreateNamespace=true
     - ServerSideApply=true  # Big CRDs.
+    - SyncInterval=30s 
 syncPolicyAppSet:
   preserveResourcesOnDeletion: true
 useSelectors: true
