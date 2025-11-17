@@ -19,6 +19,7 @@ backstage:
   command: ["node", "packages/backend"]
   extraEnvVarsSecrets:
     - backstage-env-vars
+    - github-token
   extraVolumeMounts:
     - name: backstage-config
       mountPath: "/app/config"
@@ -63,6 +64,7 @@ backstage:
     integrations:
       github:
         - host: github.com
+          token: ${GITHUB_TOKEN}
           apps:
             - $include: /app/config/github-integration.yaml
     proxy:
