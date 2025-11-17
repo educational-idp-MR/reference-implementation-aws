@@ -3,7 +3,7 @@ valueFiles:
 
 syncPolicy:
   automated:
-    selfHeal: false
+    selfHeal: true  # Habilitar auto-reparación para sincronización automática
     allowEmpty: true
     prune: false
   retry:

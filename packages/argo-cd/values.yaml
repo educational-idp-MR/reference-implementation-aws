@@ -135,6 +135,8 @@ configs:
             return health_status
   params:
     server.insecure: true
+    # Reducir el intervalo de polling para detectar cambios más rápido (30 segundos en lugar de 3 minutos)
+    timeout.reconciliation: 30s
   rbac:
     policy.csv: |
       g, superuser, role:admin
