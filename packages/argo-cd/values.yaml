@@ -10,15 +10,12 @@ server:
     tls: true
     annotations:
       argocd.argoproj.io/sync-wave: "20"
-controller:
-  env:
-    - name: ARGOCD_RECONCILIATION_TIMEOUT
-      value: "1m"
 configs:
   cm:
     accounts.backstage: apiKey
     accounts.backstage.enabled: "true"
     application.resourceTrackingMethod: annotation
+    #timeout.reconciliation: 60s
     resource.exclusions: |
       - kinds:
           - ProviderConfigUsage
@@ -139,8 +136,6 @@ configs:
             return health_status
   params:
     server.insecure: true
-    # Reducir el intervalo de polling para detectar cambios más rápido (30 segundos en lugar de 3 minutos)
-    timeout.reconciliation: 30s
   rbac:
     policy.csv: |
       g, superuser, role:admin

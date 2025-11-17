@@ -30,6 +30,7 @@ argocd:
       params:
         'server.basehref': '/{{ if eq .metadata.labels.path_routing "true" }}argocd{{ end }}'
         'server.rootpath': '{{ if eq .metadata.labels.path_routing "true" }}argocd{{ end }}'
+        'timeout.reconciliation': "60s"
   additionalResources:
   - manifestPath: "manifests"
     type: "manifests"
