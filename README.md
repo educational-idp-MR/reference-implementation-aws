@@ -296,3 +296,14 @@ This script will only remove resources other than CRDs from the EKS cluster so t
 ```bash
 scripts/cleanup-crds.sh
 ```
+# Set Up Idp (only commands)
+
+1. export REPO_ROOT=$(git rev-parse --show-toplevel)
+2. REPO_ROOT/scripts/create-cluster.sh
+    a. eksctl
+    b. Non-Auto Mode
+    c. yes
+3. ./scripts/install.sh
+4. scripts/get-urls.sh
+5. kubectl get secrets -n argocd argocd-initial-admin-secret -oyaml | yq '.data.password' | base64 -d && echo
+kubectl port-forward -n argocd svc/argocd-server 8080:80
