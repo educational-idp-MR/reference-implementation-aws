@@ -307,3 +307,6 @@ scripts/cleanup-crds.sh
 4. scripts/get-urls.sh
 5. kubectl get secrets -n argocd argocd-initial-admin-secret -oyaml | yq '.data.password' | base64 -d && echo
 kubectl port-forward -n argocd svc/argocd-server 8080:80
+
+# para el delete:
+1. eksctl delete cluster --name cnoe-ref-impl --region us-east-1   
