@@ -108,7 +108,7 @@ backstage:
         - allow: [Component, System, API, Resource, Location, Template, Group, User]
       locations:
         - type: url
-          target: https://github.com/educational-idp-MR/idp-stacks/blob/main/aws-templates/entities/catalog-info.yaml
+          target: https://github.com/educational-idp-MR/idp-stacks/blob/main/eci-templates/entities/catalog-info.yaml
     kubernetes:
       serviceLocatorMethod:
         type: multiTenant
